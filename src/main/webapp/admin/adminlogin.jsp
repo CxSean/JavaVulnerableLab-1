@@ -19,10 +19,10 @@ if(request.getParameter("Login")!=null)
                                    rs=stmt.executeQuery("select * from users where username='"+user+"' and password='"+pass+"' and privilege='admin'");
                                    if(rs != null && rs.next()){
                                    session.setAttribute("isLoggedIn", "1");
-                                   session.setAttribute("userid", rs.getString("id"));
-                                   session.setAttribute("user", rs.getString("username"));
-                                   session.setAttribute("avatar", rs.getString("avatar"));
-                                   session.setAttribute("privilege", rs.getString("privilege"));
+                                   session.setAttribute("userid", ${fn:escapeXml(rs.getString("id")));
+                                   session.setAttribute("user", ${fn:escapeXml(rs.getString("username")));
+                                   session.setAttribute("avatar", ${fn:escapeXml(rs.getString("avatar")));
+                                   session.setAttribute("privilege", ${fn:escapeXml(rs.getString("privilege")));
                                    
                                    Cookie privilege=new Cookie("privilege","admin");
                                     privilege.setPath(request.getContextPath());
