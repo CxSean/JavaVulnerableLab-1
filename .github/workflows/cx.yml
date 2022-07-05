@@ -36,7 +36,7 @@ jobs:
         checkmarx_scs_token: ${{ secrets.CHECKMARX_SCS_TOKEN }}
     - run: python install keyring
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    
+    - run: pip install -r requirements.txt
     - run: python my_script.py
     - uses: actions/checkout@v2
     - name: Checkmarx CxFlow Action
