@@ -1,0 +1,4 @@
+keyring
+json
+requests
+os
