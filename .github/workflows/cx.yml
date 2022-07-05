@@ -34,6 +34,7 @@ jobs:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
         checkmarx_scs_token: ${{ secrets.CHECKMARX_SCS_TOKEN }}
+    - run: python install keyring
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     
     - run: python my_script.py
