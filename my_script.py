@@ -9,7 +9,7 @@ url = "https://api.dusti.co/v1/packages"
 
 token = os.environ.get('CHECKMARX_SCS_TOKEN')
 
-print(typeof(token))
+print(type(token))
 print(length(token))
 
 headers = {
