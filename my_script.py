@@ -7,10 +7,10 @@ import os
 url = "https://api.dusti.co/v1/packages"
 #token = keyring.get_password(u":local-database:scs", u"token")
 
-token = os.environ.get('CHECKMARX_SCS_TOKEN')
+token = os.environ('CHECKMARX_SCS_TOKEN')
 
 print(type(token))
-print(length(token))
+
 
 headers = {
     "Authorization": "token " + token
