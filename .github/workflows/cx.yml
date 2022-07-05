@@ -12,6 +12,8 @@
 # For full documentation,including a list of all inputs, please refer to the README https://github.com/checkmarx-ts/checkmarx-cxflow-github-action
 
 name: CxFlow-GitHub-Pull-Request
+env:
+  checkmarx_scs_token: ${{ secrets.CHECKMARX_SCS_TOKEN }}
 
 # Controls when the action will run. Triggers the workflow on push or pull request events but only for the master branch
 on:
@@ -34,7 +36,6 @@ jobs:
         python-version: '3.9' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
         cache: 'pip'
-        checkmarx_scs_token: ${{ secrets.CHECKMARX_SCS_TOKEN }}
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - run: pip install -r requirements.txt
     - run: python my_script.py
